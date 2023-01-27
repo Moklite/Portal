@@ -16,16 +16,11 @@ namespace Portal.Controllers
         {
             _context = context;
         }
-        // GET: Users
-        public ActionResult Index()
-        {
-            return View();
-        }
 
-        public ActionResult Create()
-        {
-            return View();
-        }
+        public ActionResult Index() => View();
+
+        public ActionResult Create() => View();
+
         [HttpPost]
         public async Task<IActionResult> Create(User model)
         {
@@ -34,11 +29,10 @@ namespace Portal.Controllers
                 _context.Users.Add(model);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(UserExperience), new { id = model.UserId });
-
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError("","unable to run command check in with the admin");
+                ModelState.AddModelError("", "unable to run command check in with the admin");
             }
             return View(model);
         }
@@ -46,34 +40,26 @@ namespace Portal.Controllers
         [HttpGet("User/UserExperience/{id}")]
         public ActionResult UserExperience(int? id)
         {
-            var check = _context.Users.Where(x => x.UserId == id).FirstOrDefault();
-            if (check == null)
-            {
-                return NotFound();
-            }
-
+            var check = _context.Users.FirstOrDefault(x => x.UserId == id);
+            if (check == null) return NotFound();
             return View("UserExperience", check);
         }
 
         [HttpPost("User/Experience")]
-       // [ValidateAntiForgeryToken]
         public ActionResult UserExperience(User user)
         {
             try
-            {  
-                    _context.Users.Update(user);
-                    _context.SaveChanges();
-                    return RedirectToAction("ThankYou");
+            {
+                _context.Users.Update(user);
+                _context.SaveChanges();
+                return RedirectToAction("ThankYou");
             }
             catch (Exception ex)
             {
-
                 ModelState.AddModelError("", "unable to run command check in with the admin");
             }
-            
             return View(user);
         }
-
 
         public async Task<IActionResult> Delete(int id)
         {
@@ -91,11 +77,8 @@ namespace Portal.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult ThankYou()
-        {
-            return View();
-        }
-
+        public ActionResult ThankYou() => View();
     }
+
 
 }
