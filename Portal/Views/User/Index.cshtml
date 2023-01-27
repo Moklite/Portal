@@ -1,0 +1,29 @@
+﻿@model IEnumerable<User>
+
+@{
+    ViewBag.Title = "Index";
+    //Layout = "~/Views/_ViewStart.cshtml";
+}
+
+<div class="jumbotron">
+    <h1 class="display-4" style="text-align:center">EXIT INTERVIEW!</h1>
+    <p class="lead" style="text-align:center">
+        It has been a privilege working with you in DEMO.  We appreciate your time,
+        efforts and sacrifices in delivering quality services <br /> to our clients and in living the DEMO values on a daily basis.
+        We hope your time and career in DEMO was as rewarding as you hoped it would be. <br />
+        We will miss you and hope you will keep in touch from time to time.
+        Before you leave, we would like your feedback on your time and experience in KPMG. <br />
+        The questionnaire will take about 5 minutes to complete.  Thank you in advance as you share your DEMO Story with us.<br />
+    </p>
+    <hr class="my-4">
+    <p style="text-align:center">
+        Kindly Fill This Form to Complete Your Exit Interview Process:
+        <button type="button" class="btn btn-success">@Html.ActionLink("User", "Create")</button>
+    </p>
+</div>
+
+
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />

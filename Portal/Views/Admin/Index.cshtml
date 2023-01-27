@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Portal.ViewModels.AdminViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    //Layout = "~/Views/_ViewStart.cshtml";
+}
+
+<div class="jumbotron">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Staff Name</th>
+                <th>Division</th>
+                <th>Gender</th>
+                <th>Level</th>
+                <th>Service Length</th>
+                <th>Moving To</th>
+                <th>Alumni Home Address</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.StaffName</td>
+                <td>@item.Division</td>
+                <td>@item.Gender</td>
+                <td>@item.Level</td>
+                <td>@item.ServiceLength</td>
+                <td>@item.MovingTo</td>
+                <td>@item.AlumniHomeAddress</td>
+                <td>
+                                          
+                        <div class="btn-group-sm" role="group">
+                            <button type="button" class="btn btn-success"> @Html.ActionLink("Edit", "Edit", new { id = item.UserId }) </button>
+                        </div>
+                        
+                </td>
+            </tr>            }
+
+        </tbody>
+    </table>
+</div>
+
+
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />

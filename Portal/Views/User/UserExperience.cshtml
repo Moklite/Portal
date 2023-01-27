@@ -1,0 +1,277 @@
+﻿@model User
+
+@{
+    ViewBag.Title = "User Experience";
+    // Layout = "~/Views/_ViewStart.cshtml";
+}
+
+
+@using (Html.BeginForm("Experience", "User", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div class="jumbotron">
+            <h3 style="text-align: center;"> - SECTION TWO</h3>
+            <p style="font-size:1em; text-align:center;"> - Please fill in the correct information as changes would not be made after saving:</p>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <h1>My Business Unit:</h1>
+            <div class="form-group">
+                @Html.LabelFor(model => model.BizUnitInformedMe,"Kept me informed on matters relevant to me", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.BizUnitInformedMe, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.BizUnitInformedMe, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.BizUnitInvolvedMe,"Involved me where appropriate in decisions is affecting my work", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.BizUnitInvolvedMe, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.BizUnitInvolvedMe, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.BizUnitPositiveCulture,"Fostered a positive culture", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.BizUnitPositiveCulture, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.BizUnitPositiveCulture, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.BizUnitOnTheJobTraining,"Provided satisfactory on-the-job training", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.BizUnitOnTheJobTraining, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.BizUnitOnTheJobTraining, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.BizUnitAssignedWork,"Assigned work fairly", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.BizUnitAssignedWork, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.BizUnitAssignedWork, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.BizUnitImprovementIdeas,"Is there anything you feel could be improved within your Business Unit?", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.BizUnitImprovementIdeas, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.BizUnitImprovementIdeas, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <h2>My Job:</h2>
+            <div class="form-group">
+                @Html.LabelFor(model => model.MyJobValuableWorkExp,"Gave me valuable work experience", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.MyJobValuableWorkExp, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MyJobValuableWorkExp, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.MyJobSkills,"Made good use of my skills and abilities", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.MyJobSkills, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MyJobSkills, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.MyJobManageableWorkload,"Provided me with manageable work load", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.MyJobManageableWorkload, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MyJobManageableWorkload, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.MyJobClearlyDefined,"Was clearly defined ", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.MyJobClearlyDefined, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MyJobClearlyDefined, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.MyJobWorkLifeHarmony,"Allowed me to balance work and personal life effectively", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.MyJobWorkLifeHarmony, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MyJobWorkLifeHarmony, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            
+            <h2>My Performance Manager</h2>
+            <div class="form-group">
+                @Html.LabelFor(model => model.PMAccessible,"Was always accessible when I needed assistance", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.PMAccessible, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PMAccessible, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PMRespectsMe,"Valued my personal time and treated me with respect", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.PMRespectsMe, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PMRespectsMe, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PMAppreciates,"Said thank you for work well done", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.PMAppreciates, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PMAppreciates, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.isPMRoleModel,"Was a positive work life model for me", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.isPMRoleModel, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.isPMRoleModel, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.isPMSupportive,"Was supportive of my career progression", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.isPMSupportive, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.isPMSupportive, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.isPMResilient,"Allowed me reasonable flexibility when required", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.isPMResilient, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.isPMResilient, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            
+            <h2>My Performance Development</h2>
+            <div class="form-group">
+                @Html.LabelFor(model => model.MyPDQualityDiscussion,"Was a quality discussion of my performance over the past year as well as setting clear objectives", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.MyPDQualityDiscussion, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MyPDQualityDiscussion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.MyPDWellPrepared,"Was well prepared throughout by my PM rather than a tick box exercise", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.MyPDWellPrepared, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MyPDWellPrepared, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.MyPDFeedback,"Provided me with continuous and constructive feedback from my PM throughout the entire year", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.MyPDFeedback, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MyPDFeedback, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.MyPDAlign,"Allowed me to see where my personal objectives align to my Business Unit and the firm", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.MyPDAlign, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MyPDAlign, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            
+            <h2>My Career</h2>
+            <div class="form-group">
+                @Html.LabelFor(model => model.isMyCareerSatisfactory,"Opportunities were satisfactory", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.isMyCareerSatisfactory, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.isMyCareerSatisfactory, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.isMyCareerExpectationMet,"Expectations were met", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.isMyCareerExpectationMet, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.isMyCareerExpectationMet, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.isMyCareerpromotion,"Promotion was attractive to me", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.isMyCareerpromotion, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.isMyCareerpromotion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            
+            <h2>My Compensation</h2>
+            <div class="form-group">
+                @Html.LabelFor(model => model.isMyCompensationPeers,"Relative to that of my peers were fair", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.isMyCompensationPeers, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.isMyCompensationPeers, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.isMyCompensationMarket,"Relative to that of my markets were fair", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.isMyCompensationMarket, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.isMyCompensationMarket, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.isMyCompensationPerf,"Relative to that of my performance were fair", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.isMyCompensationPerf, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.isMyCompensationPerf, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Submit" />
+                       @* @Html.ActionLink("Save", "UserExperience")*@
+                        @*<input type="submit" value="Save" class="btn btn-success" asp-action="UserExperience" asp-controller="User" asp-route-model="@Model" />*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
